@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Farminghere">
+    <output-path>$USER_HOME$/Downloads/Testfolder Test/plugins</output-path>
+    <root id="archive" name="Farminghere.jar">
+      <element id="module-output" name="farming" />
+    </root>
+  </artifact>
+</component>

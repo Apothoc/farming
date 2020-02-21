@@ -1,0 +1,11 @@
+name: Farming
+version: ${project.version}
+main: farmingplugin.farming.Farming
+api-version: 1.13
+commands:
+  trampleperm:
+    description: Make it so a player can trample plants or not, use the second arg for other players.
+    usage: /trampleperm [yes/no] {playername}
+  mobspawn:
+    description: Opens a mobspawning menu.
+    usage: /mobspawn
