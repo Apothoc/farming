@@ -151,8 +151,10 @@ public class BlockListener implements Listener {
     @EventHandler
     public void onBlockPhysics(BlockPhysicsEvent event) {
         Block block = event.getBlock();
-        Material blockBelow = block.getRelative(0, -1, 0).getType();
-        if (((blockBelow != Material.FARMLAND) && (plants.contains(block.getType()))) && !((block.getType() == Material.MELON) || ((blockBelow == Material.SOUL_SAND) && (block.getType()) == Material.NETHER_WART) || (   (((block.getType() == Material.BROWN_MUSHROOM) || (block.getType() == Material.RED_MUSHROOM)) && blockBelow.isSolid()  && blockBelow.isOccluding())))) {
+        Material blocktype = block.getType();
+        Block BlockBelow = block.getRelative(0, -1, 0);
+        Material blockBelowtype = BlockBelow.getType();
+        if  (((blockBelowtype != Material.FARMLAND) && (plants.contains(blocktype))) && !((blocktype == Material.MELON) || ((blocktype == Material.NETHER_WART) && (blockBelowtype == Material.SOUL_SAND)) || (((blocktype == Material.BROWN_MUSHROOM) || (blocktype == Material.RED_MUSHROOM)) && (((block.getLightLevel() < 13) && blockBelowtype.isSolid() && blockBelowtype.isOccluding()) || (blockBelowtype == Material.PODZOL) || (blockBelowtype == Material.MYCELIUM))))) {
 
             block.setType(Material.AIR);
         }
